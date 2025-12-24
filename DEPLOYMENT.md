@@ -63,28 +63,28 @@ Finish and reboot.
 **Option A: Git clone (if you have a repo)**
 ```bash
 cd ~
-git clone https://github.com/yourusername/vinyl-visualizer.git
+git clone https://github.com/yourusername/VisualPie.git
 ```
 
 **Option B: SCP from your computer**
 ```bash
 # On your computer
-scp vinyl-visualizer.tar.gz pi@raspberrypi.local:~
+scp VisualPie.tar.gz pi@raspberrypi.local:~
 # Then on Pi:
-tar xzf vinyl-visualizer.tar.gz
+tar xzf VisualPie.tar.gz
 ```
 
 **Option C: Manual download**
 ```bash
 cd ~
-wget https://your-server.com/vinyl-visualizer.tar.gz
-tar xzf vinyl-visualizer.tar.gz
+wget https://your-server.com/VisualPie.tar.gz
+tar xzf VisualPie.tar.gz
 ```
 
 ### 2. Run Installation
 
 ```bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 ./install.sh
 ```
 
@@ -133,8 +133,8 @@ This enables auto-start on boot.
 ### 6. Start Service
 
 ```bash
-sudo systemctl start vinyl-visualizer
-sudo systemctl status vinyl-visualizer
+sudo systemctl start VisualPie
+sudo systemctl status VisualPie
 ```
 
 ## Display Configuration
@@ -169,7 +169,7 @@ Add:
 xset -dpms      # Disable screen blanking
 xset s off      # Disable screensaver
 xset s noblank  # Disable screen blanking
-exec python3 ~/vinyl-visualizer/visualizer.py
+exec python3 ~/VisualPie/visualizer.py
 ```
 
 Make executable:
@@ -270,17 +270,17 @@ sdram_freq=500
 ### Check Service Status
 
 ```bash
-sudo systemctl status vinyl-visualizer
+sudo systemctl status VisualPie
 ```
 
 ### View Logs
 
 ```bash
 # Live tail
-sudo journalctl -u vinyl-visualizer -f
+sudo journalctl -u VisualPie -f
 
 # Last 100 lines
-sudo journalctl -u vinyl-visualizer -n 100
+sudo journalctl -u VisualPie -n 100
 ```
 
 ### Monitor Performance
@@ -299,12 +299,12 @@ vcgencmd get_mem gpu
 ### Update Visualizer
 
 ```bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 git pull  # If using git
 
 # Or transfer new files via SCP
 
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 ```
 
 ## Troubleshooting
@@ -313,11 +313,11 @@ sudo systemctl restart vinyl-visualizer
 
 ```bash
 # Check logs
-sudo journalctl -u vinyl-visualizer -n 50
+sudo journalctl -u VisualPie -n 50
 
 # Test manually
-sudo systemctl stop vinyl-visualizer
-cd ~/vinyl-visualizer
+sudo systemctl stop VisualPie
+cd ~/VisualPie
 ./visualizer.py
 ```
 
@@ -377,10 +377,10 @@ sudo raspi-config
 
 ```bash
 # Backup config
-cp ~/vinyl-visualizer/config.yaml ~/vinyl-visualizer/config.yaml.backup
+cp ~/VisualPie/config.yaml ~/VisualPie/config.yaml.backup
 
 # Copy to your computer
-scp pi@raspberrypi.local:~/vinyl-visualizer/config.yaml ~/Desktop/
+scp pi@raspberrypi.local:~/VisualPie/config.yaml ~/Desktop/
 ```
 
 ## Complete Deployment Checklist
@@ -388,7 +388,7 @@ scp pi@raspberrypi.local:~/vinyl-visualizer/config.yaml ~/Desktop/
 - [ ] Flash Raspberry Pi OS
 - [ ] First boot and update system
 - [ ] Configure boot options (raspi-config)
-- [ ] Transfer vinyl-visualizer files
+- [ ] Transfer VisualPie files
 - [ ] Run `./install.sh`
 - [ ] Edit `config.yaml` with stream URL
 - [ ] Test run `./test.sh` or `./visualizer.py`
@@ -397,7 +397,7 @@ scp pi@raspberrypi.local:~/vinyl-visualizer/config.yaml ~/Desktop/
 - [ ] Disable screen blanking
 - [ ] Set static IP (optional)
 - [ ] Optimize performance (GPU memory, governor)
-- [ ] Test service `sudo systemctl start vinyl-visualizer`
+- [ ] Test service `sudo systemctl start VisualPie`
 - [ ] Verify auto-start on reboot
 - [ ] Done! 🎉
 

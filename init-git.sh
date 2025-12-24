@@ -25,10 +25,10 @@ fi
 # Get GitHub repo URL
 echo "First, create a repository on GitHub:"
 echo "  1. Go to https://github.com/new"
-echo "  2. Name: vinyl-visualizer"
+echo "  2. Name: VisualPie"
 echo "  3. Don't initialize with README"
 echo ""
-read -p "Enter your GitHub repo URL (e.g., https://github.com/username/vinyl-visualizer.git): " REPO_URL
+read -p "Enter your GitHub repo URL (e.g., https://github.com/username/VisualPie.git): " REPO_URL
 
 if [ -z "$REPO_URL" ]; then
     echo "✗ No URL provided"
@@ -66,7 +66,7 @@ echo "Your code is now at: ${REPO_URL%.git}"
 echo ""
 echo "Next steps:"
 echo "  1. On your Pi: git clone $REPO_URL"
-echo "  2. cd vinyl-visualizer"
+echo "  2. cd VisualPie"
 echo "  3. ./deploy.sh"
 echo ""
 echo "See GIT_WORKFLOW.md for daily usage."

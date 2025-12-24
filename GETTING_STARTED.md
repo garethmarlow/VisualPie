@@ -3,20 +3,20 @@
 ## Step 1: Create GitHub Repository (2 minutes)
 
 1. Go to https://github.com/new
-2. Repository name: `vinyl-visualizer`
+2. Repository name: `VisualPie`
 3. Description: "Psychedelic music visualizer for Raspberry Pi"
 4. Choose Public or Private
 5. **Don't** check "Initialize with README"
 6. Click "Create repository"
-7. **Copy the repository URL** (looks like: `https://github.com/yourusername/vinyl-visualizer.git`)
+7. **Copy the repository URL** (looks like: `https://github.com/yourusername/VisualPie.git`)
 
 ## Step 2: Initialize Git & Push (1 minute)
 
 Extract the archive and run:
 
 ```bash
-tar xzf vinyl-visualizer.tar.gz
-cd vinyl-visualizer
+tar xzf VisualPie.tar.gz
+cd VisualPie
 ./init-git.sh
 # Paste your GitHub repo URL when prompted
 ```
@@ -28,8 +28,8 @@ Done! Your code is now on GitHub.
 SSH to your Pi and run:
 
 ```bash
-git clone https://github.com/yourusername/vinyl-visualizer.git
-cd vinyl-visualizer
+git clone https://github.com/yourusername/VisualPie.git
+cd VisualPie
 ./deploy.sh
 ```
 
@@ -45,7 +45,7 @@ The script will:
 
 **On your dev machine:**
 ```bash
-cd vinyl-visualizer
+cd VisualPie
 vi config.yaml              # Make changes
 git add .
 git commit -m "Changed color speed"
@@ -54,9 +54,9 @@ git push
 
 **On your Pi:**
 ```bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 git pull
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 ```
 
 ## Efficient Workflow Tip
@@ -64,7 +64,7 @@ sudo systemctl restart vinyl-visualizer
 Add to your Pi's `~/.bashrc`:
 
 ```bash
-alias vv-update='cd ~/vinyl-visualizer && git pull && sudo systemctl restart vinyl-visualizer'
+alias vv-update='cd ~/VisualPie && git pull && sudo systemctl restart VisualPie'
 ```
 
 Then just type `vv-update` to deploy latest changes!
@@ -80,13 +80,13 @@ Then just type `vv-update` to deploy latest changes!
 
 ```bash
 # View logs
-sudo journalctl -u vinyl-visualizer -f
+sudo journalctl -u VisualPie -f
 
 # Test manually
 ./test.sh
 
 # Check service status
-sudo systemctl status vinyl-visualizer
+sudo systemctl status VisualPie
 ```
 
 Enjoy! 🎵✨

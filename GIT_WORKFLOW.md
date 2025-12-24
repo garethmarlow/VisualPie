@@ -7,7 +7,7 @@ Quick reference for managing this project with Git and GitHub.
 ### 1. Create GitHub Repository
 
 Go to https://github.com/new and create a new repository:
-- Name: `vinyl-visualizer`
+- Name: `VisualPie`
 - Description: "Psychedelic music visualizer for Raspberry Pi"
 - Public or Private (your choice)
 - **Don't** initialize with README (we already have one)
@@ -17,7 +17,7 @@ Go to https://github.com/new and create a new repository:
 On your development machine (or Pi):
 
 ```bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 
 # Initialize git
 git init
@@ -29,7 +29,7 @@ git add .
 git commit -m "Initial commit: MVP psychedelic visualizer"
 
 # Link to GitHub (replace with your actual repo URL)
-git remote add origin https://github.com/YOUR-USERNAME/vinyl-visualizer.git
+git remote add origin https://github.com/YOUR-USERNAME/VisualPie.git
 
 # Push to GitHub
 git branch -M main
@@ -71,14 +71,14 @@ git push
 ssh pi@raspberrypi.local
 
 # Pull latest changes
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 git pull
 
 # Restart service
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 
 # Check it's working
-sudo systemctl status vinyl-visualizer
+sudo systemctl status VisualPie
 ```
 
 ## Common Tasks
@@ -147,8 +147,8 @@ git push
 ### Clone on Another Machine
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/vinyl-visualizer.git
-cd vinyl-visualizer
+git clone https://github.com/YOUR-USERNAME/VisualPie.git
+cd VisualPie
 ./deploy.sh
 ```
 
@@ -163,7 +163,7 @@ cd vinyl-visualizer
 
 ### Viewing on GitHub
 
-Your repo will be at: `https://github.com/YOUR-USERNAME/vinyl-visualizer`
+Your repo will be at: `https://github.com/YOUR-USERNAME/VisualPie`
 
 GitHub automatically renders:
 - README.md as homepage
@@ -185,7 +185,7 @@ git push
 
 # On Pi (can be automated)
 ssh pi@raspberrypi.local
-cd ~/vinyl-visualizer && git pull && sudo systemctl restart vinyl-visualizer
+cd ~/VisualPie && git pull && sudo systemctl restart VisualPie
 ```
 
 ### One-Liner Deploy to Pi
@@ -193,24 +193,24 @@ cd ~/vinyl-visualizer && git pull && sudo systemctl restart vinyl-visualizer
 Add this to your Pi's `~/.bashrc`:
 
 ```bash
-alias vv-update='cd ~/vinyl-visualizer && git pull && sudo systemctl restart vinyl-visualizer && sudo systemctl status vinyl-visualizer'
+alias vv-update='cd ~/VisualPie && git pull && sudo systemctl restart VisualPie && sudo systemctl status VisualPie'
 ```
 
 Then just: `vv-update`
 
 ### Auto-Update Script for Pi
 
-Create `~/vinyl-visualizer/update.sh`:
+Create `~/VisualPie/update.sh`:
 
 ```bash
 #!/bin/bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 echo "Pulling latest changes..."
 git pull
 echo "Restarting service..."
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 echo "Status:"
-sudo systemctl status vinyl-visualizer --no-pager
+sudo systemctl status VisualPie --no-pager
 ```
 
 Then: `./update.sh` to deploy latest changes.
@@ -235,7 +235,7 @@ Git already backs up to GitHub, but you can also:
 ```bash
 # Clone to external drive
 cd /mnt/external-drive
-git clone https://github.com/YOUR-USERNAME/vinyl-visualizer.git
+git clone https://github.com/YOUR-USERNAME/VisualPie.git
 ```
 
 ## Troubleshooting
@@ -291,7 +291,7 @@ git push              # Upload to GitHub
 
 # Deployment
 ssh pi@raspberrypi.local
-git pull && sudo systemctl restart vinyl-visualizer
+git pull && sudo systemctl restart VisualPie
 
 # Safety
 git status            # See what changed

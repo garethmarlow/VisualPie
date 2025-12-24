@@ -22,7 +22,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('/tmp/vinyl-visualizer.log'),
+        logging.FileHandler('/tmp/VisualPie.log'),
         logging.StreamHandler()
     ]
 )

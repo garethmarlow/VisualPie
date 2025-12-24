@@ -5,7 +5,7 @@
 set -e
 
 echo "╔════════════════════════════════════════╗"
-echo "║   Vinyl Visualizer - Pi Deployment    ║"
+echo "║   VisualPie - Pi Deployment    ║"
 echo "╚════════════════════════════════════════╝"
 echo ""
 

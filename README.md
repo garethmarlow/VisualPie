@@ -1,4 +1,4 @@
-# Vinyl Visualizer 🎵✨
+# VisualPie 🎵✨
 
 Psychedelic music visualizer for Raspberry Pi 3, designed for high-quality vinyl playback via Icecast streaming.
 
@@ -10,8 +10,8 @@ Psychedelic music visualizer for Raspberry Pi 3, designed for high-quality vinyl
 
 ```bash
 # On your Raspberry Pi
-git clone https://github.com/yourusername/vinyl-visualizer.git
-cd vinyl-visualizer
+git clone https://github.com/yourusername/VisualPie.git
+cd VisualPie
 ./deploy.sh
 ```
 
@@ -28,7 +28,7 @@ That's it! The script handles everything: dependencies, config, service setup.
 ## Architecture
 
 ```
-vinyl-visualizer/
+VisualPie/
 ├── visualizer.py              # Main application (orchestrator)
 ├── audio_engine_icecast.py    # Audio processing & FFT analysis
 ├── config.yaml                # Configuration
@@ -61,8 +61,8 @@ vinyl-visualizer/
 
 ```bash
 cd ~
-git clone https://github.com/yourusername/vinyl-visualizer.git
-cd vinyl-visualizer
+git clone https://github.com/yourusername/VisualPie.git
+cd VisualPie
 ./deploy.sh
 ```
 
@@ -107,17 +107,17 @@ See [config.yaml](config.yaml) for all options.
 
 **Service control:**
 ```bash
-sudo systemctl start vinyl-visualizer
-sudo systemctl stop vinyl-visualizer
-sudo systemctl restart vinyl-visualizer
-sudo systemctl status vinyl-visualizer
-sudo journalctl -u vinyl-visualizer -f   # View logs
+sudo systemctl start VisualPie
+sudo systemctl stop VisualPie
+sudo systemctl restart VisualPie
+sudo systemctl status VisualPie
+sudo journalctl -u VisualPie -f   # View logs
 ```
 
 **After making changes:**
 ```bash
 git pull                                  # Get latest
-sudo systemctl restart vinyl-visualizer   # Apply
+sudo systemctl restart VisualPie   # Apply
 ```
 
 See [QUICKREF.md](QUICKREF.md) for more commands.
@@ -154,7 +154,7 @@ curl -I http://your-stream-url
 ffmpeg -i http://your-stream-url -t 5 test.wav
 
 # View logs
-sudo journalctl -u vinyl-visualizer -n 100
+sudo journalctl -u VisualPie -n 100
 ```
 
 **Performance issues:**
@@ -182,15 +182,15 @@ git push
 
 # Pull on Pi and restart
 ssh pi@raspberrypi.local
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 git pull
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 ```
 
 ## Project Structure
 
 ```
-vinyl-visualizer/
+VisualPie/
 ├── visualizer.py                    # Main application
 ├── audio_engine_icecast.py          # Audio processing & FFT
 ├── config.yaml                      # Configuration

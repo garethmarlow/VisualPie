@@ -3,7 +3,7 @@
 ## Installation (One-Time Setup)
 
 ```bash
-cd ~/vinyl-visualizer
+cd ~/VisualPie
 ./install.sh
 sudo ./install-service.sh
 ```
@@ -26,23 +26,23 @@ vi config.yaml
 
 **As service:**
 ```bash
-sudo systemctl start vinyl-visualizer     # Start
-sudo systemctl stop vinyl-visualizer      # Stop
-sudo systemctl restart vinyl-visualizer   # Restart
-sudo systemctl status vinyl-visualizer    # Check status
+sudo systemctl start VisualPie     # Start
+sudo systemctl stop VisualPie      # Stop
+sudo systemctl restart VisualPie   # Restart
+sudo systemctl status VisualPie    # Check status
 ```
 
 ## Logs
 
 ```bash
 # Service logs (live tail)
-sudo journalctl -u vinyl-visualizer -f
+sudo journalctl -u VisualPie -f
 
 # Last 50 lines
-sudo journalctl -u vinyl-visualizer -n 50
+sudo journalctl -u VisualPie -n 50
 
 # Application logs
-tail -f /tmp/vinyl-visualizer.log
+tail -f /tmp/VisualPie.log
 ```
 
 ## Keyboard Controls (When Running Manually)
@@ -107,7 +107,7 @@ curl -I http://your-stream-url
 ffmpeg -i http://your-stream-url -t 5 test.wav
 
 # Check logs
-sudo journalctl -u vinyl-visualizer -n 100
+sudo journalctl -u VisualPie -n 100
 ```
 
 **Poor performance:**
@@ -124,33 +124,33 @@ htop
 **Service won't start:**
 ```bash
 # Check service file paths
-cat /etc/systemd/system/vinyl-visualizer.service
+cat /etc/systemd/system/VisualPie.service
 
 # Reload systemd
 sudo systemctl daemon-reload
 
 # Check for errors
-sudo systemctl status vinyl-visualizer
+sudo systemctl status VisualPie
 ```
 
 ## File Locations
 
-- **Config:** `~/vinyl-visualizer/config.yaml`
-- **Service:** `/etc/systemd/system/vinyl-visualizer.service`
-- **Logs:** `/var/log/vinyl-visualizer/` and `/tmp/vinyl-visualizer.log`
-- **Code:** `~/vinyl-visualizer/`
+- **Config:** `~/VisualPie/config.yaml`
+- **Service:** `/etc/systemd/system/VisualPie.service`
+- **Logs:** `/var/log/VisualPie/` and `/tmp/VisualPie.log`
+- **Code:** `~/VisualPie/`
 
 ## Quick Tweaks Without Restart
 
 ```bash
 # Edit config
-vi ~/vinyl-visualizer/config.yaml
+vi ~/VisualPie/config.yaml
 
 # Restart service to apply
-sudo systemctl restart vinyl-visualizer
+sudo systemctl restart VisualPie
 
 # Watch it start up
-sudo journalctl -u vinyl-visualizer -f
+sudo journalctl -u VisualPie -f
 ```
 
 ## Future Features (Architecture Ready)
@@ -178,7 +178,7 @@ cp visualizations/psychedelic_spectrum.py visualizations/my_viz.py
 
 ## Getting Help
 
-1. Check logs: `sudo journalctl -u vinyl-visualizer -n 100`
+1. Check logs: `sudo journalctl -u VisualPie -n 100`
 2. Test stream: `ffmpeg -i http://your-stream-url -t 5 test.wav`
 3. Check CPU: `htop`
 4. Test manually: `./test.sh`
@@ -187,10 +187,10 @@ cp visualizations/psychedelic_spectrum.py visualizations/my_viz.py
 
 ```bash
 # Stop the service
-sudo systemctl stop vinyl-visualizer
+sudo systemctl stop VisualPie
 
 # Disable auto-start
-sudo systemctl disable vinyl-visualizer
+sudo systemctl disable VisualPie
 
 # Kill any running instances
 pkill -f visualizer.py
