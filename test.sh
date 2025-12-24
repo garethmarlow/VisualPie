@@ -1,7 +1,7 @@
 #!/bin/bash
 # Quick test script for development
 
-echo "=== Vinyl Visualizer Test ==="
+echo "=== VisualPie Test ==="
 echo ""
 
 # Check dependencies

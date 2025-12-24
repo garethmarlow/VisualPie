@@ -59,7 +59,7 @@ Thumbs.db
 # Logs
 *.log
 /tmp/
-/var/log/vinyl-visualizer/
+/var/log/VisualPie/
 
 # Config overrides (keep template, ignore local)
 config.local.yaml

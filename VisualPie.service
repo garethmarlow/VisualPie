@@ -1,5 +1,5 @@
 [Unit]
-Description=Vinyl Visualizer
+Description=VisualPie
 After=network.target sound.target
 
 [Service]

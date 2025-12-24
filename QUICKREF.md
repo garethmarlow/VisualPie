@@ -1,4 +1,4 @@
-# Vinyl Visualizer - Quick Reference
+# VisualPie - Quick Reference
 
 ## Installation (One-Time Setup)
 

@@ -1,6 +1,6 @@
 # Raspberry Pi Deployment Guide
 
-Complete step-by-step guide for deploying Vinyl Visualizer on a fresh Raspberry Pi 3.
+Complete step-by-step guide for deploying VisualPie on a fresh Raspberry Pi 3.
 
 ## Prerequisites
 
@@ -56,7 +56,7 @@ Navigate to:
 
 Finish and reboot.
 
-## Install Vinyl Visualizer
+## Install VisualPie
 
 ### 1. Transfer Files
 
@@ -415,4 +415,4 @@ Next steps:
 - Consider adding more visualization modes
 - Integrate with Home Assistant for control
 
-Enjoy your vinyl visualizer! 🎵✨
+Enjoy your VisualPie! 🎵✨

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Vinyl Visualizer - Main Application
+VisualPie - Main Application
 
 Modular music visualizer for Raspberry Pi 3
 Designed for extensibility: track recognition, lyrics, multiple viz modes
@@ -33,7 +33,7 @@ class VinylVisualizer:
     """Main visualizer application"""
     
     def __init__(self, config_path='config.yaml'):
-        logger.info("Initializing Vinyl Visualizer")
+        logger.info("Initializing VisualPie")
         
         # Load configuration
         with open(config_path, 'r') as f:
@@ -55,7 +55,7 @@ class VinylVisualizer:
                 (display_config['width'], display_config['height'])
             )
         
-        pygame.display.set_caption("Vinyl Visualizer")
+        pygame.display.set_caption("VisualPie")
         
         # Initialize audio engine
         # Try Icecast stream, fall back to system audio if unavailable
@@ -80,7 +80,7 @@ class VinylVisualizer:
         self.frame_count = 0
         self.fps_display_counter = 0
         
-        logger.info("Vinyl Visualizer initialized successfully")
+        logger.info("VisualPie initialized successfully")
         
     def _load_visualization(self, viz_name):
         """Load visualization module by name"""
@@ -91,7 +91,7 @@ class VinylVisualizer:
             
     def run(self):
         """Main application loop"""
-        logger.info("Starting Vinyl Visualizer")
+        logger.info("Starting VisualPie")
         self.running = True
         
         # Start audio processing
