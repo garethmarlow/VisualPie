@@ -21,7 +21,7 @@ fi
 
 # Check we're in the right directory
 if [ ! -f "visualizer.py" ]; then
-    echo "✗ Error: Not in vinyl-visualizer directory"
+    echo "✗ Error: Not in VisualPie directory"
     echo "  Run this from the project root"
     exit 1
 fi
@@ -87,8 +87,8 @@ echo "=== Step 4: Log Directories ==="
 echo ""
 
 # Create log directory
-sudo mkdir -p /var/log/vinyl-visualizer
-sudo chown $USER:$USER /var/log/vinyl-visualizer
+sudo mkdir -p /var/log/VisualPie
+sudo chown $USER:$USER /var/log/VisualPie
 echo "✓ Log directories created"
 
 echo ""
@@ -118,16 +118,16 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     USERNAME=$(whoami)
     INSTALL_DIR=$(pwd)
     
-    sed "s/User=pi/User=$USERNAME/" vinyl-visualizer.service | \
+    sed "s/User=pi/User=$USERNAME/" VisualPie.service | \
     sed "s/Group=pi/Group=$USERNAME/" | \
-    sed "s|/home/pi/vinyl-visualizer|$INSTALL_DIR|g" | \
-    sudo tee /etc/systemd/system/vinyl-visualizer.service > /dev/null
+    sed "s|/home/pi/VisualPie|$INSTALL_DIR|g" | \
+    sudo tee /etc/systemd/system/VisualPie.service > /dev/null
     
     # Reload systemd
     sudo systemctl daemon-reload
     
     # Enable service
-    sudo systemctl enable vinyl-visualizer.service
+    sudo systemctl enable VisualPie.service
     
     echo "✓ Service installed and enabled"
     echo ""
@@ -135,9 +135,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     read -p "Start service now? (y/n) " -n 1 -r
     echo
     if [[ $REPLY =~ ^[Yy]$ ]]; then
-        sudo systemctl start vinyl-visualizer
+        sudo systemctl start VisualPie
         sleep 2
-        sudo systemctl status vinyl-visualizer --no-pager || true
+        sudo systemctl status VisualPie --no-pager || true
     fi
 fi
 
@@ -148,11 +148,11 @@ echo "╚═══════════════════════�
 echo ""
 echo "Quick commands:"
 echo "  Test:      ./test.sh"
-echo "  Start:     sudo systemctl start vinyl-visualizer"
-echo "  Stop:      sudo systemctl stop vinyl-visualizer"
-echo "  Restart:   sudo systemctl restart vinyl-visualizer"
-echo "  Status:    sudo systemctl status vinyl-visualizer"
-echo "  Logs:      sudo journalctl -u vinyl-visualizer -f"
+echo "  Start:     sudo systemctl start VisualPie"
+echo "  Stop:      sudo systemctl stop VisualPie"
+echo "  Restart:   sudo systemctl restart VisualPie"
+echo "  Status:    sudo systemctl status VisualPie"
+echo "  Logs:      sudo journalctl -u VisualPie -f"
 echo ""
 echo "Config:      vi config.yaml"
 echo "Quick ref:   cat QUICKREF.md"
