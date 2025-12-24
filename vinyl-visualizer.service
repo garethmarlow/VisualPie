@@ -1,0 +1,19 @@
+[Unit]
+Description=Vinyl Visualizer
+After=network.target sound.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/vinyl-visualizer
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/pi/.Xauthority"
+ExecStart=/usr/bin/python3 /home/pi/vinyl-visualizer/visualizer.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=append:/var/log/vinyl-visualizer/output.log
+StandardError=append:/var/log/vinyl-visualizer/error.log
+
+[Install]
+WantedBy=multi-user.target

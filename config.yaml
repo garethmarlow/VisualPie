@@ -1,0 +1,36 @@
+# Vinyl Visualizer Configuration
+
+# Audio Stream Settings
+audio:
+  stream_url: "http://your-icecast-server:8000/stream.ogg"  # Replace with your Icecast URL
+  sample_rate: 48000
+  channels: 2
+  buffer_size: 2048
+
+# Display Settings
+display:
+  width: 1920
+  height: 1080
+  fullscreen: true
+  fps_target: 60
+
+# Visualization Settings
+visualization:
+  current: "psychedelic_spectrum"  # Which visualization to use
+  
+  # Psychedelic Spectrum Settings
+  psychedelic_spectrum:
+    num_bars: 64
+    bar_spacing: 4
+    color_speed: 0.5          # How fast colors cycle (0.1 = slow, 2.0 = fast)
+    smoothing: 0.85           # Audio smoothing (0.0 = none, 0.95 = very smooth)
+    amplitude_scale: 2.0      # Overall sensitivity
+    bass_boost: 1.5           # Extra boost for low frequencies
+    glow_intensity: 0.6       # Glow/bloom effect strength
+    mirror_mode: true         # Mirror spectrum vertically
+    
+# Future: Track Recognition, Lyrics, etc.
+features:
+  track_recognition: false
+  lyrics_display: false
+  metadata_display: false
